@@ -1,0 +1,297 @@
+
+
+
+.Btn{
+  color:black !important;
+  background-color:white!important;
+}
+.searchBar.active{
+color:rgb(82, 25, 102) !important;
+}
+
+
+.dropdown-item.danger {
+  color:red !important;
+}
+
+.page-title{
+  font-weight: 600 !important;
+  font-size: 25px !important;
+}
+
+.header-right {
+  position: relative;
+}
+
+.avatar {
+  cursor: pointer;
+  position: relative;
+  
+}
+
+.avatar-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  z-index: 1000;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #eee;
+  margin: 4px 0;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 12px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+.dropdown-item.danger {
+  color: rgb(4, 2, 2);
+}
+
+
+.myBtn{
+  background-color: rgb(82, 25, 102) !important;
+}
+
+.MuiAppBar-root{
+  background-color: white !important;
+  color: black !important;
+  
+}
+.MuiTypography-root{
+  font-weight: 700 !important;
+}
+.menu-link{
+  color:white !important;
+  font-size: 16px !important;
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+.sidebar {
+  position:fixed;
+  top: 0;
+  left: 0;
+  width: 260px;   
+  height: 100vh;
+  background:rgb(82, 25, 102) !important;
+  color: white;
+  z-index: 1000; 
+  transition: transform 0.3s ease-in-out;
+  overflow-y: auto;
+  overflow-x: hidden;
+  
+}
+
+
+.main-content {
+  flex:1;
+  margin-left: 250px; 
+  width: calc(100% - 260px);
+  min-height: 100vh;
+  background: #f3f4f6;
+  transition: margin-left 0.3s ease;
+  margin-top: 70px;
+  padding: 0 !important;
+}
+
+
+.header {
+  background-color: rgb(82, 25, 102) !important;
+  position: fixed;
+  top: 0;
+  left: 260px;   
+  right: 0;
+  height: 64px;
+  background:rgb(82, 25, 102)!important ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  z-index: 10; 
+  color: white !important;
+}
+
+
+.content-area{
+  padding: 0 !important;
+  margin: 0 !important;
+  
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100vh;
+  background: rgb(82, 25, 102);
+  color: #fff;
+  overflow-y: auto;
+  padding-top: 70px; 
+  font-size: 20px !important;
+}
+
+
+.sidebar-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 70px;
+  background: rgb(82, 25, 102);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  font-size: 20px ;
+}
+
+
+.menu-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-link {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 12px 16px;
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.menu-link:hover {
+  background: gray;
+}
+
+.menu-link.active {
+  background: #1a1a40;
+  font-weight: 600;
+}
+
+
+.menu-icon {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+
+.menu-arrow {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+}
+.menu-arrow.active {
+  transform: rotate(180deg);
+}
+
+
+.submenu {
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-top: 4px;
+}
+
+
+.submenu-link {
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #b0b0d0;
+  text-decoration: none;
+  transition: color 0.3s, background 0.3s;
+}
+
+.submenu-link:hover {
+  color: #fff;
+  background: #1a1a40;
+  border-radius: 4px;
+}
+
+.submenu-link.active {
+  color: #fff;
+  background: #2c2c60;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+
+
+/*.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  font-size: 14px;
+  color: blue;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.MuiCard-root{
+  background-color: rgb(205, 214, 219) !important;
+  height: 400px;
+  width: 300px;
+
+}
+.MuiLink-root{
+ text-align: left !important;
+}
+.MuiAppBar-root{
+  background-color: #01040a !important;
+  height: 70px !important;
+}
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}*/
