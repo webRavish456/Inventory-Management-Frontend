@@ -236,7 +236,7 @@ const handleCreateSave=(newProduct)=>{
         onClose={handleDeleteClose}
         dialogTitle="Delete Product"
         dialogContent={
-          <DeleteProduct
+          <DeleteProduct 
           product={deleteData}
           onCancel={handleDeleteClose}
           onDelete={confirmDelete}/>
