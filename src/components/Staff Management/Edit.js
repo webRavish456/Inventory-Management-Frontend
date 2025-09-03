@@ -75,10 +75,10 @@ export default function EditStaff({ editData, handleUpdate, handleClose }) {
           <Grid item xs={12} sm={6}>
             <TextField
               label="Joining Date"
-              name="joiningDate"
+              name="joiningdate"
               type="date"
               InputLabelProps={{ shrink: true }}
-              value={staffData.joiningDate}
+              value={staffData.joiningdate}
               onChange={handleChange}
               fullWidth
             />
