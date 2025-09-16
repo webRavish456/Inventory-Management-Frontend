@@ -1,11 +1,13 @@
-import Layout from './components/Layout';
+'use client';
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Layout>
-      <div>
-        {/* Empty Dashboard */}
-      </div>
-    </Layout>
+    <div>
+      <h2>Welcome to Dashboard</h2>
+      <p>
+        This is the main content area.  
+        Now Sidebar and Header should be visible globally.
+      </p>
+    </div>
   );
 }
