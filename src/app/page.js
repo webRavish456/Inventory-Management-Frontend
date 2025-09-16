@@ -1,28 +1,6 @@
-import Layout from "../component/Layout";
-export default function Home(){
-  return(
-    <Layout> 
-      <div>
-        {/* Empty Dashboard */}
-      </div>
-      </Layout>
-   
-  );
-}
-
-
-// import Layout from '../components/Layout';
-
-// export default function Home() {
-//   return (
-//     <Layout>
-//       <div>
-//         {/* Empty Dashboard */}
-//       </div>
-//     </Layout>
-//   );
-// }
 // import Image from "next/image";
+
+import Layout from "@/components/Layout";
 
 // export default function Home() {
 //   return (
@@ -125,3 +103,15 @@ export default function Home(){
 //     </div>
 //   );
 // }
+
+
+
+export default function Home(){
+  return(
+    <Layout>
+      <div>
+        {/* Empty Dasboard */}
+      </div>
+    </Layout>
+  )
+}
