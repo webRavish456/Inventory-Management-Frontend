@@ -1,106 +1,59 @@
-"use client";
+'use client'
 
-import * as React from "react";
-import {
-  Box,
-  Paper,
-  Typography,
-  TextField,
-  Button,
-  Link,
-  InputAdornment,
-} from "@mui/material";
-import EmailIcon from "@mui/icons-material/EmailOutlined";
-import LockIcon from "@mui/icons-material/LockOutlined";
+import { useState } from 'react'
+import { Container, Box, TextField, Button, Typography, Paper } from '@mui/material'
 
-export default function Home() {
-  const [form, setForm] = React.useState({ email: "", password: "" });
-
-  const handleChange = (e) =>
-    setForm((s) => ({ ...s, [e.target.name]: e.target.value }));
+export default function LoginPage() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    alert(`Email: ${form.email}\nPassword: ${form.password}`);
-  };
+    e.preventDefault()
+    // You can replace this with API call or auth logic
+    console.log('Email:', email, 'Password:', password)
+    alert(`Logged in as ${email}`)
+  }
 
   return (
-    <Box
-      sx={{
-        minHeight: "100vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        bgcolor: "#00b3ffff", 
-        p: 2,
-      }}
-    >
-      <Paper
-        elevation={3}
-        sx={{
-          width: 380,
-          p: 4,
-          borderRadius: 3,
-        }}
-      >
-        <Typography variant="h5" fontWeight="bold" gutterBottom>
-          Log In
+    <Container maxWidth="sm">
+      <Paper elevation={3} sx={{ p: 4, mt: 10, borderRadius: 3 }}>
+        <Typography variant="h5" align="left" gutterBottom>
+          Login
         </Typography>
-
-        <form onSubmit={handleSubmit}>
+        <Box component="form" onSubmit={handleSubmit}>
           <TextField
-            variant="standard"
+            label="Email"
+            type="email"
             fullWidth
             margin="normal"
-            label="Enter Email id *"
-            name="email"
-            value={form.email}
-            onChange={handleChange}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <EmailIcon />
-                </InputAdornment>
-              ),
-            }}
+            variant="standard"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
           />
 
           <TextField
-            variant="standard"
-            fullWidth
-            margin="normal"
+            label="Password"
             type="password"
-            label="Enter Password *"
-            name="password"
-            value={form.password}
-            onChange={handleChange}
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <LockIcon />
-                </InputAdornment>
-              ),
-            }}
+            fullWidth
+            margin="normal"
+            variant="standard"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             required
           />
-
-          <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 1 }}>
-            <Link href="#" underline="hover">
-              <u>Forget Password</u>
-            </Link>
-          </Box>
 
           <Button
             type="submit"
-            fullWidth
             variant="contained"
-            sx={{ mt: 3 }}
+            color="primary"
+            fullWidth
+            sx={{ mt: 2, py: 1.5, borderRadius: 2 }}
           >
-            LOG IN
+            Login
           </Button>
-        </form>
+        </Box>
       </Paper>
-    </Box>
-  );
+    </Container>
+  )
 }

@@ -1,16 +1,23 @@
 'use client';
 
-import Sidebar from "./sidebar";
-import Header from "./Header";
+import React, { useState } from 'react';
+import Header from './Header';
+import Sidebar from './Sidebar';
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   return (
     <div className="app-container">
       <Sidebar />
+      
       <div className="main-content">
         <Header />
-        <main className="content-area">{children}</main>
+        
+        <main className="content-area">
+          {children}
+        </main>
       </div>
     </div>
   );
-}
+};
+
+export default Layout;

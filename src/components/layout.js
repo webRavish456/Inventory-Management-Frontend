@@ -1,19 +1,19 @@
-// app/layout.js
-import "./globals.css";
-import Header from "./components/Header";
+"use client";
 
-export const metadata = {
-  title: "My Website",
-  description: "Built with Next.js",
-};
+import Header from "./Header";
+import Sidebar from "./sidebar";
 
-export default function RootLayout({ children }) {
+export default function Layout({ children }) {
   return (
-    <html lang="en">
-      <body>
+    <div className="flex h-screen">
+      {/* Sidebar */}
+      <Sidebar />
+
+      {/* Main Section */}
+      <div className="flex flex-col flex-1">
         <Header />
-        <main>{children}</main>
-      </body>
-    </html>
+        <main className="flex-1 p-4 bg-gray-50">{children}</main>
+      </div>
+    </div>
   );
 }
