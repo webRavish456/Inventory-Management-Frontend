@@ -1,270 +1,127 @@
-import Header from "@/components/Header"
-import Sidebar from "@/components/Sidebar"
-import Layout from "@/components/Layout"
-
-export default function Home() {
+import Layout from "../component/Layout";
+export default function Home(){
   return(
-    <>
-    <Header/>
-    <Sidebar/>
-    <Layout/>
-    
-    </>
-  )
-}
-/*"use client";
-
-import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import DashboardIcon from "@mui/icons-material/Dashboard";
-
-const userSettings = ["Profile", "Logout"];
-
-export default function DashboardAppBar() {
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenUserMenu = (event) => setAnchorElUser(event.currentTarget);
-  const handleCloseUserMenu = () => setAnchorElUser(null);
-
-  return (
-    <AppBar position="sticky" color="primary">
-      <Container maxWidth="xl">
-        <Toolbar>
-          
-          <DashboardIcon sx={{ mr: 1 }} />
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, fontWeight: 700, letterSpacing: ".1rem" }}
-          >
-           INVENTORY DASHBOARD
-          </Typography>
-
-          
-          <Tooltip title="Open settings">
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="User" src="/avatar.png" />
-            </IconButton>
-          </Tooltip>
-          <Menu
-            sx={{ mt: "45px" }}
-            id="menu-appbar-user"
-            anchorEl={anchorElUser}
-            anchorOrigin={{ vertical: "top", horizontal: "right" }}
-            keepMounted
-            transformOrigin={{ vertical: "top", horizontal: "right" }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
-          >
-            {userSettings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                {setting}
-              </MenuItem>
-            ))}
-          </Menu>
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <Layout> 
+      <div>
+        {/* Empty Dashboard */}
+      </div>
+      </Layout>
+   
   );
 }
 
 
+// import Layout from '../components/Layout';
 
-"use client"
-import { Box, Card, CardContent, Typography, TextField, Button, Link } from "@mui/material";
+// export default function Home() {
+//   return (
+//     <Layout>
+//       <div>
+//         {/* Empty Dashboard */}
+//       </div>
+//     </Layout>
+//   );
+// }
+// import Image from "next/image";
 
-import { IconMail, IconEye } from "@tabler/icons-react";
+// export default function Home() {
+//   return (
+//     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
+//       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+//         <Image
+//           className="dark:invert"
+//           src="/next.svg"
+//           alt="Next.js logo"
+//           width={180}
+//           height={38}
+//           priority
+//         />
+//         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
+//           <li className="mb-2 tracking-[-.01em]">
+//             Get started by editing{" "}
+//             <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
+//               src/app/page.js
+//             </code>
+//             .
+//           </li>
+//           <li className="tracking-[-.01em]">
+//             Save and see your changes instantly.
+//           </li>
+//         </ol>
 
-export default function Login() {
-  return (
-    <Box
-      sx={{
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor:"#f0f4f8",
-      }}
-    >
-      <Card sx={{ width: 400, p: 2, boxShadow: 5, backgroundColor: "#dce6ed" }}>
-        <CardContent>
-          <Typography variant="h5" align="center" gutterBottom>
-            Log In
-          </Typography>
-
-          <TextField
-            label="Email"
-            placeholder="Enter Email Id"
-            variant="outlined"
-            fullWidth
-            required
-            margin="normal"
-            InputProps={{
-              endAdornment: <IconMail size={20} style={{ marginLeft: 8 }} />,
-            }}
-          />
-
-          <TextField
-            label="Password"
-            placeholder="Enter Password"
-            type="password"
-            variant="outlined"
-            fullWidth
-            required
-            margin="normal"
-            InputProps={{
-              endAdornment: <IconEye size={20} style={{ marginLeft: 8 }} />,
-            }}
-          />
-
-          <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 2 }}>
-            <Link href="#" underline="hover">
-              Forgot Password
-            </Link>
-          </Box>
-
-          <Button
-            variant="contained"
-            fullWidth
-            sx={{ backgroundColor: "#001f4d", "&:hover": { backgroundColor: "#001030" } }}
-          >
-            LOG IN
-          </Button>
-        </CardContent>
-      </Card>
-    </Box>
-  );
-}
-
-"use client";
-import React, { useState, useEffect } from "react";
-import {
-  TextField,
-  Button,
-  Card,
-  CardContent,
-  Typography,
-  Link,
-  Box,
-} from "@mui/material";
-import { IconEye, IconMail } from "@tabler/icons-react";
-
-export default function Login() {
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
-  const [saveData, setSaveData] = useState([]);
-
-  useEffect(() => {
-    const allData = JSON.parse(localStorage.getItem("saveData")) || [];
-    setSaveData(allData);
-  }, []);
-
-  const handleChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!user.email || !user.password) {
-      alert("Please fill all fields!");
-      return;
-    }
-
-    console.log("Login Successful:", user);
-
-    const updatedData = [...saveData, user];
-    setSaveData(updatedData);
-    localStorage.setItem("saveData", JSON.stringify(updatedData));
-
-    setUser({ email: "", password: "" });
-  };
-
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        minHeight: "100vh",
-        bgcolor: "#f5f5f5",
-      }}
-    >
-      <Card sx={{ width: 400, p: 2, boxShadow: 3 }}>
-        <CardContent>
-          <Typography variant="h5" gutterBottom textAlign={"center"}>
-            Log In
-          </Typography>
-          <form onSubmit={handleSubmit}>
-            <TextField
-            label="Email"
-              placeholder="Enter Email Id"
-              type="email"
-              name="email"
-              value={user.email}
-              onChange={handleChange}
-              fullWidth
-              required
-              margin="normal"
-              variant="outlined"
-              InputProps={{
-                startAdornment: <IconMail size={20} style={{marginRight:8}}/>
-              }}
-            />
-            <br></br>
-            <Box display="flex" justifyContent="space-between" alignItems="center">
-              <TextField
-              label="Password"
-              placeholder="Enter Password"
-                type="password"
-                name="password"
-                value={user.password}
-                onChange={handleChange}
-                fullWidth
-                required
-                margin="normal"
-                variant="outlined"
-                InputProps={{
-                startAdornment: <IconEye size={20} style={{marginRight:8}}/>
-              }}
-              />
-              
-            </Box>
-            <br></br>
-            <div style={{ display: "flex", justifyContent: "flex-end", width: "100%" }}>
-            <a href="/forgot-password" style={{ color: "blue", fontSize: "14px" }}>
-              Forgot Password
-            </a>
-            </div>
-
-            <Button
-              type="submit"
-              variant="contained"
-              fullWidth
-              sx={{
-                mt: 3,
-                bgcolor: "#051c3fff",
-                "&:hover": { bgcolor: "hsla(216, 86%, 23%, 1.00)" },
-              }}
-            >
-              Log In
-            </Button>
-          </form>
-          
-        </CardContent>
-      </Card>
-    </Box>
-  );
-}*/
-
-
+//         <div className="flex gap-4 items-center flex-col sm:flex-row">
+//           <a
+//             className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
+//             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//           >
+//             <Image
+//               className="dark:invert"
+//               src="/vercel.svg"
+//               alt="Vercel logomark"
+//               width={20}
+//               height={20}
+//             />
+//             Deploy now
+//           </a>
+//           <a
+//             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+//             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+//             target="_blank"
+//             rel="noopener noreferrer"
+//           >
+//             Read our docs
+//           </a>
+//         </div>
+//       </main>
+//       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+//         <a
+//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+//           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           <Image
+//             aria-hidden
+//             src="/file.svg"
+//             alt="File icon"
+//             width={16}
+//             height={16}
+//           />
+//           Learn
+//         </a>
+//         <a
+//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+//           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           <Image
+//             aria-hidden
+//             src="/window.svg"
+//             alt="Window icon"
+//             width={16}
+//             height={16}
+//           />
+//           Examples
+//         </a>
+//         <a
+//           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+//           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           <Image
+//             aria-hidden
+//             src="/globe.svg"
+//             alt="Globe icon"
+//             width={16}
+//             height={16}
+//           />
+//           Go to nextjs.org →
+//         </a>
+//       </footer>
+//     </div>
+//   );
+// }
