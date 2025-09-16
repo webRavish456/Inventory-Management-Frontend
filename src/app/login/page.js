@@ -1,111 +1,65 @@
-"use client";
-import { useState } from "react";
-import {
-  
-  Box,
-  TextField,
-  Button,
-  Typography,
-  Link,
-  Paper,
-  Grid
-} from "@mui/material";
+"use client"
+import { Box, Card, CardContent, Typography, TextField, Button, Link } from "@mui/material";
 
-export default function LoginPage() {
-  const [formData, setFormData] = useState({ email: "", password: "" });
+import { IconMail, IconEye } from "@tabler/icons-react";
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Email:", formData.email);
-    console.log("Password:", formData.password);
-
-    
-  };
-
+export default function Login() {
   return (
-    
     <Box
-    sx={{
-        minHeight: "100vh",        // full screen height
-        width: "100%",             // full screen width
-        bgcolor: "grey.200",       // grey background
+      sx={{
+        height: "100vh",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        backgroundColor:"#f0f4f8",
       }}
     >
-      <Box
-        component={Paper}
-        elevation={3}
-        sx={{
-          p: 4,
-          width: "320px",
-          borderRadius: 2,
-          textAlign: "center",
-        
-        }}
-      >
-        
-        <Typography variant="h6" fontWeight="bold" gutterBottom sx={{ textAlign: "left" }}>
-          Log In
-        </Typography>
+      <Card sx={{ width: 400, p: 2, boxShadow: 5, backgroundColor: "#dce6ed" }}>
+        <CardContent>
+          <Typography variant="h5" align="center" gutterBottom>
+            Log In
+          </Typography>
 
-        
-        <Box component="form" onSubmit={handleSubmit}>
           <TextField
+            label="Email"
+            placeholder="Enter Email Id"
+            variant="outlined"
             fullWidth
-            label="Enter Email Id"
-            name="email"
-            type="email"
-            margin="normal"
-            value={formData.email}
-            onChange={handleChange}
             required
-            variant="standard"
-            InputLabelProps={{ required: false}}
+            margin="normal"
+            InputProps={{
+              endAdornment: <IconMail size={20} style={{ marginLeft: 8 }} />,
+            }}
           />
 
           <TextField
-            fullWidth
-            label="Enter Password"
-            name="password"
+            label="Password"
+            placeholder="Enter Password"
             type="password"
-            margin="normal"
-            value={formData.password}
-            onChange={handleChange}
+            variant="outlined"
+            fullWidth
             required
-            variant="standard"
-            InputLabelProps={{ required: false}}
+            margin="normal"
+            InputProps={{
+              endAdornment: <IconEye size={20} style={{ marginLeft: 8 }} />,
+            }}
           />
 
-         
-          <Grid container alignItems="center" justifyContent="space-between" mt={1}>
-            <Grid item>
-             
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="body2" underline="hover"
-              sx={{ color: "black", fontSize: "0.9rem"}}>
-                Forgot Password ?
-              </Link>
-            </Grid>
-          </Grid>
+          <Box sx={{ display: "flex", justifyContent: "flex-end", mb: 2 }}>
+            <Link href="#" underline="hover">
+              Forgot Password
+            </Link>
+          </Box>
 
           <Button
-            type="submit"
             variant="contained"
             fullWidth
-            sx={{ mt: 3, bgcolor: "#0D47A1", textTransform: "none" }}
+            sx={{ backgroundColor: "#001f4d", "&:hover": { backgroundColor: "#001030" } }}
           >
-            Log In
+            LOG IN
           </Button>
-        </Box>
-      </Box>
-      </Box>
-    
+        </CardContent>
+      </Card>
+    </Box>
   );
 }
